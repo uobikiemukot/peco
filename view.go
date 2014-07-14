@@ -47,23 +47,32 @@ func (v *View) Loop() {
 	}
 }
 
+// 
+
+
 func (v *View) printStatus(msg string) {
 	w, h := termbox.Size()
 
 	width := runewidth.StringWidth(msg)
 	if width > w {
-		msg = runewidth.Truncate(msg, width - w, "")
+		msg = runewidth.Truncate(msg, width - (width - w), "")
 	}
 
-	pad := make([]byte, w-width)
-	for i := 0; i < w-width; i++ {
-		pad[i] = ' '
+	var pad []byte
+	if w > width {
+		pad = make([]byte, w-width)
+		for i := 0; i < w-width; i++ {
+			pad[i] = ' '
+		}
 	}
 
 	fgAttr := v.config.Style.Basic.fg
 	bgAttr := v.config.Style.Basic.bg
 
-	printTB(0, h-2, fgAttr, bgAttr, string(pad))
+	if w > width {
+		printTB(0, h-2, fgAttr, bgAttr, string(pad))
+	}
+
 	if width > 0 {
 		printTB(w-width, h-2, fgAttr|termbox.AttrReverse|termbox.AttrBold, bgAttr|termbox.AttrReverse, msg)
 	}

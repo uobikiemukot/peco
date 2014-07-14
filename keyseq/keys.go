@@ -120,6 +120,25 @@ func ToKeyList(ksk string) (KeyList, error) {
 	return list, nil
 }
 
+func EventToString(ev termbox.Event) (string, error) {
+	s := ""
+	if ev.Key == 0 {
+		s = string([]rune{ev.Ch})
+	} else {
+		var ok bool
+		s, ok = keyToString[ev.Key]
+		if ! ok {
+			return "", fmt.Errorf("error: No such key %#v", ev)
+		}
+	}
+
+	if ev.Mod & termbox.ModAlt == 1 {
+		return "M-" + s, nil
+	}
+
+	return s, nil
+}
+
 func ToKey(key string) (k termbox.Key, modifier ModifierKey, ch rune, err error) {
 	modifier = ModNone
 	if strings.HasPrefix(key, "M-") {

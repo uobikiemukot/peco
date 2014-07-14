@@ -173,7 +173,7 @@ func (c *Ctx) NewInput() *Input {
 	// Create a new keymap object
 	k := NewKeymap(c.config.Keymap, c.config.Action)
 	k.ApplyKeybinding()
-	return &Input{c, &sync.Mutex{}, nil, k}
+	return &Input{c, &sync.Mutex{}, nil, k, []string{}}
 }
 
 func (c *Ctx) SetQuery(q []rune) {
