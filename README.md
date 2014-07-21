@@ -328,15 +328,12 @@ For now, styles of following 5 items can be customized in `config.json`.
 - `"on_cyan"` for `termbox.ColorCyan`
 - `"on_white"` for `termbox.ColorWhite`
 
-### Foreground Attributes
+### Attributes
 
-- `"bold"` for `termbox.AttrBold`
-- `"underline"` for `termbox.AttrUnderline`
-- `"blink"` for `termbox.AttrReverse`
-
-### Background Attributes
-
-- `"on_bold"` for `termbox.AttrBold`
+- `"bold"` for fg: `termbox.AttrBold`
+- `"underline"` for fg: `termbox.AttrUnderline`
+- `"reverse"` for fg: `termbox.AttrReverse`
+- `"blink"` for bg: `termbox.AttrBold`
 
 ## CustomMatcher
 
