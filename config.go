@@ -82,7 +82,7 @@ var (
 		"blink":     termbox.AttrReverse,
 	}
 	stringToBgAttr = map[string]termbox.Attribute{
-		"on_bold": termbox.AttrBold,
+		"blink": termbox.AttrBold,
 	}
 )
 
