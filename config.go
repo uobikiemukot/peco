@@ -79,7 +79,7 @@ var (
 	stringToFgAttr = map[string]termbox.Attribute{
 		"bold":      termbox.AttrBold,
 		"underline": termbox.AttrUnderline,
-		"blink":     termbox.AttrReverse,
+		"reverse":   termbox.AttrReverse,
 	}
 	stringToBgAttr = map[string]termbox.Attribute{
 		"blink": termbox.AttrBold,
