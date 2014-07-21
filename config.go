@@ -141,7 +141,7 @@ func stringsToStyle(raw []string) *Style {
 	}
 
 	for _, s := range raw {
-		fg_attr, ok := stringToBgAttr[s]
+		fg_attr, ok := stringToFgAttr[s]
 		if ok {
 			style.fg |= fg_attr
 		}
