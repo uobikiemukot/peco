@@ -293,9 +293,9 @@ For now, styles of following 5 items can be customized in `config.json`.
     "Style": {
         "Basic": ["on_default", "default"],
         "SavedSelection": ["bold", "on_yellow", "white"],
-        "Selected": ["underline", "on_cyan", "black"],
+        "Selected": ["underline", "on_bold", "on_red", "black"],
         "Query": ["yellow", "bold"],
-        "Matched": ["on_bold", "red", "on_blue"]
+        "Matched": ["red", "on_blue"]
     }
 }
 ```
